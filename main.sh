@@ -26,6 +26,10 @@ set -o nounset              # Exit on unset variables
 #================================================================================#
 # Global configuration options should be UPPER case and explicitly declared
 declare -r GLOBAL_CONF="foobar"     
+__DIR__="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+__FILE__="${__DIR__}/$(basename "${BASH_SOURCE[0]}")"
+__EXT__="${__FILE__##*.}"
+__BASE__="$(basename "${__FILE__}" ."${__EXT__}")"
 
 #================================================================================#
 # STANDARD FUNCTIONS
